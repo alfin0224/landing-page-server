@@ -1,0 +1,129 @@
+GET http://localhost:8000/categories
+
+
+####
+POST http://localhost:8000/categories
+Content-Type: application/json
+
+{
+    "name": "Live Stream"
+}
+
+####
+PUT http://localhost:8000/categories/64c8d99d5ac55e5d44a2eb5a
+Content-Type: application/json
+
+{
+    "name": "Live Stream"
+}
+
+###
+GET http://localhost:8000/game-catalogs
+
+###
+GET http://localhost:8000/game-catalogs/64c8d2e626ec87db2ff61095
+
+
+####
+PUT http://localhost:8000/game-catalogs/64c9192b7c14e9d5a381a085/description
+Content-Type: application/json
+
+{
+
+    "description": "Beli Points hanya dalam hitungan detik! Cukup masukkan Username Example Game J Anda, pilih jumlah Points yang Anda inginkan, selesaikan pembayaran, dan Token tersebut akan langsung masuk ke akun Example Game J Anda."
+}
+
+###
+GET http://localhost:8000/game-catalogs/category/64c8c85c34f804f984d8a057
+
+####
+POST http://localhost:8000/game-catalogs
+Content-Type: application/json
+
+{
+    "title": "Example Game K",
+    "imageUrl": "https://picsum.photos/200/300?random=11",
+    "description": "Beli Points hanya dalam hitungan detik! Cukup masukkan Username Example Game A Anda, pilih jumlah Points yang Anda inginkan, selesaikan pembayaran, dan Token tersebut akan langsung masuk ke akun Example Game A Anda.",
+    "categoryId": "64c8c85c34f804f984d8a057"
+
+}
+
+
+####
+GET http://localhost:8000/top-up-amounts
+
+####
+POST http://localhost:8000/top-up-amounts
+Content-Type: application/json
+
+  {
+    "points": 7000,
+    "price": 600000,
+    "gameCatalogId": "64c8d299f2435f989ab8829e"
+  }
+
+####
+POST http://localhost:8000/top-up-amounts/bulk-insert
+Content-Type: application/json
+[
+  {
+    "points": 300,
+    "price": 30000,
+    "gameCatalogId": "64c8c85c34f804f984d8a057"
+  },
+    {
+    "points": 625,
+    "price": 60000,
+    "gameCatalogId": "64c8c85c34f804f984d8a057"
+  },
+    {
+    "points": 1125,
+    "price": 110000,
+    "gameCatalogId": "64c8c85c34f804f984d8a057"
+  },
+  {
+    "points": 1650,
+    "price": 150000,
+    "gameCatalogId": "64c8c85c34f804f984d8a057"
+  },
+    {
+    "points": 3400,
+    "price": 300000,
+    "gameCatalogId": "64c8c85c34f804f984d8a057"
+  },
+    {
+    "points": 7000,
+    "price": 600000,
+    "gameCatalogId": "64c8c85c34f804f984d8a057"
+  },
+]
+
+###
+GET http://localhost:8000/slider-promo
+
+
+####
+POST http://localhost:8000/slider-promo
+Content-Type: application/json
+
+{
+    "imageUrl": "https://picsum.photos/1000/336?random=4",
+    "alt": "Sampel Random Image Slider 4"
+}
+
+
+####
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+    "userId": "Alfienda#SEA",
+    "name": "Alfienda Rahman",
+    "gameCatalog": "64c8d299f2435f989ab8829e"
+}
+
+###
+GET http://localhost:8000/users
+
+###
+GET http://localhost:8000/users/search?userId=Westbourne%23SEA 
